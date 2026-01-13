@@ -1,1 +1,160 @@
+@import "react-big-calendar/lib/css/react-big-calendar.css";
 
+.app-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendar-header h1 {
+  margin: 0;
+  color: #333;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: #e0e0e0;
+}
+
+.calendar-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+.event-input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.event-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* React Big Calendar customizations */
+.rbc-calendar {
+  font-family: Arial, sans-serif;
+}
+
+.rbc-event {
+  padding: 2px 5px;
+  cursor: pointer;
+}
+
+.rbc-event:focus {
+  outline: none;
+}
+
+.rbc-day-slot .rbc-time-slot {
+  border-top: 1px solid #e6e6e6;
+}
+
+.rbc-header {
+  padding: 10px 3px;
+  border-bottom: 2px solid #ddd;
+  font-weight: bold;
+}
+
+.rbc-today {
+  background-color: #f0f8ff;
+}
+
+/* Popup styles */
+.mm-popup {
+  z-index: 10000;
+}
+
+.mm-popup__box {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mm-popup__box__footer {
+  padding: 15px;
+  border-top: 1px solid #e6e6e6;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.mm-popup__box__footer__right-space {
+  display: flex;
+  gap: 10px;
+}
+
+.mm-popup__btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.mm-popup__btn--success {
+  background-color: #28a745;
+  color: white;
+}
+
+.mm-popup__btn--success:hover {
+  background-color: #218838;
+}
+
+.mm-popup__btn--info {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.mm-popup__btn--info:hover {
+  background-color: #138496;
+}
+
+.mm-popup__btn--danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.mm-popup__btn--danger:hover {
+  background-color: #c82333;
+}
+
+.mm-popup__btn--cancel {
+  background-color: #6c757d;
+  color: white;
+}
+
+.mm-popup__btn--cancel:hover {
+  background-color: #5a6268;
+}
