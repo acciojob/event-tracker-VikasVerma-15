@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
-import { Calendar, momentLocalizer } from "react-big-calendar";
+import Calendar from "react-big-calendar";
 import moment from "moment";
+import momentLocalizer from "react-big-calendar/lib/localizers/moment";
 import Popup from "react-popup";
 import "./../styles/App.css";
 
