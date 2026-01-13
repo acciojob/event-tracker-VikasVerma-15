@@ -51,20 +51,8 @@ const App = () => {
   const handleSelectSlot = ({ start, end }) => {
     setSelectedSlot({ start, end });
     setSelectedEvent(null);
-    
-    // Check if there's an existing event on this date
-    const existingEvent = events.find(event => 
-      moment(event.start).startOf("day").isSame(moment(start).startOf("day"))
-    );
-
-    if (existingEvent) {
-      // Show edit/delete popup
-      setSelectedEvent(existingEvent);
-      showEditDeletePopup(existingEvent);
-    } else {
-      // Show create event popup
-      showCreateEventPopup(start);
-    }
+    // Show create event popup
+    showCreateEventPopup(start);
   };
 
   // Handle event click
@@ -113,7 +101,7 @@ const App = () => {
                   start: moment(startDate).toDate(),
                   end: moment(startDate).add(1, "hour").toDate()
                 };
-                setEvents([...events, newEvent]);
+                setEvents(prevEvents => [...prevEvents, newEvent]);
                 Popup.close();
               }
             }
@@ -164,7 +152,7 @@ const App = () => {
               const location = locationInput ? locationInput.value : "";
 
               if (title.trim()) {
-                setEvents(events.map(e =>
+                setEvents(prevEvents => prevEvents.map(e =>
                   e.id === event.id
                     ? { ...e, title: title, location: location }
                     : e
@@ -177,7 +165,7 @@ const App = () => {
             text: "Delete",
             className: "mm-popup__btn mm-popup__btn--danger",
             action: function () {
-              setEvents(events.filter(e => e.id !== event.id));
+              setEvents(prevEvents => prevEvents.filter(e => e.id !== event.id));
               Popup.close();
             }
           },
